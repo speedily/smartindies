@@ -1,0 +1,19 @@
+{
+    "Table": [
+        {
+            "stateid": "01-06-2015",
+            "release": "past",
+            "html": "hello <a href=\"http://www.hello.com\"></a>",
+            "source": "https://i1.ytimg.com/vi/JqZsWrgO73I/0.jpg",
+            "alt": "Smart Indies FAQs edition 01 June 2015"
+        },
+        {
+            "stateid": "01-07-2015",
+            "release": "current",
+            "html": "yahoo <a href=\"http://www.yahoo.com\"></a>",
+            "source": "./images/ebooks/01-07-2015.png",
+            "alt": "Smart Indies edition 01 July 2015"
+        }
+        
+    ]
+}

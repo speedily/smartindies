@@ -1,0 +1,53 @@
+{
+    "Table": [
+        {
+            "stateid": "01-06-2015",
+            "type": "currentrelease",
+            "source": "https://www.youtube.com/embed/JqZsWrgO73I?rel=0&showinfo=0",
+            "alt": "Smart Indies FAQs edition 01 July 2015"
+        },
+        {
+            "currentrelease": "01-07-2015",
+            "01-06-2015": {
+                "type": "vid",
+                "source": "https://www.youtube.com/embed/JqZsWrgO73I?rel=0&showinfo=0",
+                "alt": "Smart Indies FAQs edition 01 July 2015"
+            },
+            "01-07-2015": {
+                "type": "pic",
+                "source": "./images/ebooks/01-07-2015.png",
+                "alt": "Smart Indies edition 01 July 2015"
+            },
+            "01-08-2015": {
+                "type": "pic",
+                "source": "./images/ebooks/01-08-2015.png",
+                "alt": "Smart Indies edition 01 August 2015"
+            }
+        }
+    ]
+}
+
+{
+    "Table": [
+        {
+            "stateid": "2",
+            "statename": "Tamilnadu"
+        },
+        {
+            "stateid": "3",
+            "statename": "Karnataka"
+        },
+        {
+            "stateid": "4",
+            "statename": "Andaman and Nicobar"
+        },
+        {
+            "stateid": "5",
+            "statename": "Andhra Pradesh"
+        },
+        {
+            "stateid": "6",
+            "statename": "Arunachal Pradesh"
+        }
+    ]
+}

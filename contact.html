@@ -1,0 +1,284 @@
+<html>
+<head>
+<title>Smart Indies | Contact Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="./js/bootstrap-3.3.4-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./js/bootstrap-3.3.4-dist/css/bootstrap-theme.min.css">
+<script src="./js/jquery-1.11.3.min.js"></script>
+<script src="./js/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./css/style.css">
+<script src="./js/header.js"></script> <!--mycode-->
+
+<!--<link rel="stylesheet" href="css/bootstrap.css"  type="text/css"/>
+<link rel="stylesheet" href="css/style.css"  type="text/css"/>-->
+
+<link rel="stylesheet" href="css/bootstrap-select.css"  type="text/css"/>
+<!--<script src="js/jquery.js"></script>-->
+<script src="js/jquery.json-2.4.min.js"></script>
+<!--  <script src="js/bootstrap.js"></script>-->
+   <script src="js/bootstrap-select.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <style>
+
+    label.error{
+    color: red !important;
+    }
+
+    label.valid{
+    margin-left: 5px !important;
+    color: green !important;}
+
+    #myads{
+    width: 728px;
+
+    margin : auto;
+    }
+    </style>
+
+</head>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  $.getJSON("http://api.ipify.org?format=jsonp&callback=?",
+    function(json) { $("#ip").val(json.ip);});
+
+ $.validator.setDefaults({
+submitHandler: function(form) {
+   //console.log("we are sending"+$(".myfirstform").serialize());
+    var fs = $(".myfirstform").serialize();
+   $.post("https://script.google.com/macros/s/AKfycbwxeVOCetEtaKt3KUzg8WWaqNrKMVuGsQenScch5Uln2ph55Ts/exec?", fs, function(data)
+    {
+
+    /*$.ajax({
+		  type: "POST",
+		  url: "https://script.google.com/macros/s/AKfycbwxeVOCetEtaKt3KUzg8WWaqNrKMVuGsQenScch5Uln2ph55Ts/exec",
+		  data: $(".myfirstform").serialize()
+		}).done(function(data) {*/
+		console.log("returned:"+data);
+    if(data=="fine")
+    {
+      $(".myfirstform").hide();
+      $(".alert-danger").hide();
+
+      $(".alert-success").show();
+    }
+    else if (data=="error")
+    {
+      //$(".alert-success").hide();
+      //$(".alert-danger").show();
+      alert("Please Call Us On Our Phone Number Instead.\n And Remind Us That This Contact Form Is Not Working!");
+    }
+  //})
+}, "text").fail( function(xhr, textStatus, error){
+      //console.log(xhr.statusText);
+      //console.log(textStatus);
+      //console.log(error);
+//alert("error: cant reach server");
+//$(".alert-success").hide();
+//$(".alert-danger").show();
+alert("Error: Cant Register. \n Please Fix Your Internet Connection & Retry!");
+});
+
+}
+
+});
+
+$(".myfirstform").validate({rules:
+{name:{required:true,minlength:6},
+phone:{required:true,number:true,minlength:10},
+email:{required:true,email:true},
+website:{required:false,url:true},
+cate:"required",
+msg:{required:true, minlength:10, maxlength:2000}
+},
+errorClass:"error",
+highlight: function(label) {
+    $(label).closest('.form-group').removeClass('has-success').addClass('has-error');
+  },
+
+success: function(label) {
+    label
+      .text('Seems Perfect!').addClass('valid')
+	  .closest('.form-group').addClass('has-success');
+  } });
+
+});
+
+</script>
+
+ <script type="text/javascript">
+        $(window).on('load', function () {
+
+            $('.selectpicker').selectpicker({
+                'selectedText': 'cat'
+            });
+
+            // $('.selectpicker').selectpicker('hide');
+        });
+
+</script>
+</head>
+<body data-spy="scroll" data-target="#navbar-example" >
+<!-- /container full -->
+<div id="faqs" class="icontainer-full" >
+        <div id="menu"></div>
+
+     <h1  class="head text-center">Contact Us</h1>
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                     <h3 class="">Our Location</h3>
+
+                </div>
+                <div class="panel-body">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.4673145659694!2d88.40307179999999!3d22.561618799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02742af416dee3%3A0xa6d39919d6ec6756!2sJora+Mandir+Market+Mandir!5e0!3m2!1sen!2sin!4v1439711731868" width="100%" height="130" frameborder="0" style="border:0" allowfullscreen></iframe><br/><br/>
+                    <span class="glyphicon glyphicon-send"></span> <b>Smart Indies</b><br/>
+                    <span class="glyphicon glyphicon-tower"></span> Jyoti Plaza<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beliaghata Main Rd<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kolkata 700 010<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;India<br/>
+                    <span class="glyphicon glyphicon-earphone"></span> 9748746284<!--/03323639145--><br/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                     <h3 class="">Support Forum</h3>
+
+                </div>
+                <div class="panel-body">
+                    <ul class="">
+                        <li class="">If you have ideas to create new products which smart indies should make.</li>
+                        <li class="">If you have suggestions for improving our existing products.</li>
+                        <li class="">If you have questions regarding our product.</li>
+                        <li class="">If you need support regarding how to use our products or to fix an issue.</li>
+                    </ul>
+                    <br class="">Then the <a class="glyphicon glyphicon-hand-right" href="https://groups.google.com/forum/#!forum/smartindies" target="_blank">support-forum</a> is the right place for this, just goto <a href="https://groups.google.com/forum/#!forum/smartindies" class="glyphicon glyphicon-hand-right"  target="_blank">support-forums</a> and start a new topic of your choice.
+                    <br class="">
+                        <br class="">
+                <br/>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                     <h3 class="">Contact Form</h3>
+
+                </div>
+                <div class="panel-body">
+                  <div class="alert alert-success" style="display:none;"><strong><span class="glyphicon glyphicon-send"></span> Success! Message sent.</strong><br/></div>
+                  <div class="alert alert-danger" style="display:none;"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please check the inputs.</strong><br/></div>
+
+                  <!-- Form -->
+                  <form class="myfirstform" role="form">
+  <!--
+    <legend>Contact Form</legend>		-->
+    <div class="form-group">
+          <label class="control-label">Name</label>
+      <div class="controls">
+          <div class="input-group">
+          <input type="text" class="form-control" name="name" placeholder="Name">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+          <label class="control-label">Phone</label>
+      <div class="controls">
+          <div class="input-group">
+          <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+          <label class="control-label">Email</label>
+      <div class="controls">
+          <div class="input-group">
+          <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+        </div>
+      </div>
+    </div>
+
+    <!--<div class="form-group ">
+          <label class="control-label">Website</label>
+      <div class="controls">
+          <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+          <input type="text" class="form-control" id="lname" name="website" placeholder="website url">
+        </div>
+      </div>
+    </div>
+
+
+  <div class="control-group">
+    <label class="control-label" for="selectbasic">Purpose</label>
+    <div class="controls">
+      <select id="selectbasic" name="selectbasic" class="input-large">
+        <option>Ads</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+
+  -->
+
+    <div class="form-group ">
+          <label class="control-label" for="cate">Purpose</label>
+      <div class="controls">
+     <div class="input-group">
+          <select name="cate" class="form-control"> <option> Ads</option>
+          <option> Other</option>
+          </select>
+
+        </div>
+        </div>
+    </div>
+
+    <div class="form-group ">
+          <label class="control-label">Message</label>
+      <div class="controls">
+          <div class="input-group">
+          <textarea name="msg" class="form-control " rows="4" cols="78" placeholder="Enter your message here"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group " style="display:none;">
+          <label class="control-label">Message</label>
+      <div class="controls">
+          <div class="input-group">
+          <input  type="text"  id="ip" name="ip" class="form-control" placeholder="Enter your message here"/>
+        </div>
+      </div>
+    </div>
+
+                          <div class="alert alert-info" ><span class="glyphicon glyphicon-info-sign"></span><strong> Click the "Send Message" button below.</strong><br/></div>
+        <!--<br/><b>Note:</b> If all feilds don't show "Seems Perfect!" word in Green color below them, then you may need to hit the "Send Message" button twice! i.e., first time to show the Green text, then second time to actually send the message to us. <br/> <b>Also Note:</b> After sending message, a "Success" confirmation message will show.<br/>-->
+        <div class="controls" style="">
+
+         <button type="submit" id="mybtn"  class="btn btn-primary" style="float:right;">Send Message</button>
+
+        </div>
+    </form>
+                  <!-- /Form -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <p id="top-link-block" class="text-right"><a href="#top" class="well well-sm"><i class="glyphicon glyphicon-chevron-up"></i> Back to Top </a></p>
+<div class="col-lg-12 text-right" id="foot"></div>
+<!--<script src="js/jquery.validate.min.js"></script>
+<script src="js/app.js"></script>-->
+</body>
+</html>
