@@ -1,0 +1,2 @@
+# smartindies
+repo of site
